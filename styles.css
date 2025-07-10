@@ -5,7 +5,7 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     margin: 0;
-    padding: 0;
+    padding: 20px 20px;
   }
   
   /* Shared Navigation */
@@ -22,15 +22,28 @@ body {
     margin: 10px;
     font-weight: bold;
   }
-  
   nav a:hover {
-    color: #FFD700;
+    background-color: #FFD700; /* gold */
+    color: black;
+    transform: scale(1.05);
+    padding: 10px 10px;
+
   }
   
+  /* Active = while being clicked */
+  nav a:active {
+    background-color: #FF4500; /* orange-red */
+    color: white;
+    transform: scale(0.95);
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.3);
+    padding: 20px 20px;
+  }
+  
+  /* Visited = previously clicked link */
   nav a:visited {
-    color: #ccc;
+    color: #cccccc; /* light gray */
   }
-  
+
   /* Footer */
   footer {
     background-color: #003366;
@@ -128,5 +141,49 @@ body {
     transition: transform 0.3s ease;
   }
 
-
+/* Layout section */
+.main-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+  }
+  
+  /* Main article and sidebar */
+  article {
+    flex: 2 1 60%;
+    background-color: rgba(255, 255, 255, 0.85);
+    padding: 15px;
+    border-radius: 8px;
+  }
+  
+  aside {
+    flex: 1 1 30%;
+    background-color: rgba(0, 51, 102, 0.9);
+    color: white;
+    padding: 15px;
+    border-radius: 8px;
+  }
+  
+  /* Responsive: stack layout on smaller screens */
+  @media (max-width: 768px) {
+    .main-content {
+      flex-direction: column;
+    }
+  
+    article,
+    aside {
+      width: 100%;
+    }
+  }
+  
+  /* Optional polish */
+  header, footer {
+    background-color: #003366;
+    color: white;
+    padding: 15px;
+    text-align: center;
+    margin-bottom: 15px;
+  }
+  
   
